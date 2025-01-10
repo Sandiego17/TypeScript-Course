@@ -77,3 +77,36 @@ function formatGreeting (name: string, greeting: string): string {
 
 const greetingResult = formatGreeting('mario', 'hello')
 
+// any type
+let collection: any[] = ['hello', true, 30, null, undefined];
+
+collection.push({id: 123});
+
+console.log(collection);
+
+// tuple type
+var person1: [string, number, boolean] = ['Henry', 30, true];
+
+var hsla: [number, string, string, number];
+hsla = [200, '100%', '50%', 1];
+
+let xy: [number, number];
+xy = [94.7, 20.1];
+
+function useCords(): [number, number] {
+  // get cords
+
+  const lat = 100;
+  const long = 50;
+
+  return [lat, long];
+}
+
+const [lat, long] = useCords();
+
+// named tuples
+let userID: [name: string, age: number];
+
+userID = ['Potato', 25];
+console.log(userID[0]);
+
