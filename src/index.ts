@@ -70,3 +70,10 @@ addTwoNumbers(3, 9);
 subtractTwoNumbers(10, 4);
 addAllNumbers([5, 7, 9, 11, 13, 12, 10]);
 
+// return type inference
+function formatGreeting (name: string, greeting: string): string {
+  return `${greeting}, ${name}`;
+}
+
+const greetingResult = formatGreeting('mario', 'hello')
+
