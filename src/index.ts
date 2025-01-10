@@ -192,3 +192,20 @@ let anotherId: Id;
 anotherId = 'igwetupac';
 anotherId = 5;
 
+// type guards
+function swapIdType (id: Id) {
+  if (typeof id === 'string') {
+    return parseInt(id);
+  } else if (typeof id === 'number') {
+    return id.toString();
+  } else {
+    return null;
+  }
+}
+
+const idOne = swapIdType(1);
+const idTwo = swapIdType('2');
+const idThree = swapIdType(true);
+
+console.log(idOne, idTwo, idThree);
+
