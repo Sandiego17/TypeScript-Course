@@ -176,3 +176,19 @@ function formatUser(user: User): void {
 formatUser(userOne);
 formatUser({ name: 'luigi', score: 100 });
 
+// union types
+let someId: number | string;
+someId = 1;
+someId = 'string';
+
+let email: string | null = null;
+
+email = 'mario@gmail.com';
+email = null;
+
+type Id = number | string | boolean;
+let anotherId: Id;
+
+anotherId = 'igwetupac';
+anotherId = 5;
+
