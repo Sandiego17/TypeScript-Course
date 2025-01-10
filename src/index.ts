@@ -209,3 +209,42 @@ const idThree = swapIdType(true);
 
 console.log(idOne, idTwo, idThree);
 
+// tagged interfaces
+interface Users {
+  type: 'user'
+  username: string
+  email: string
+  id: Id
+}
+
+interface Persons {
+  type: 'person'
+  firstname: string
+  age: number
+  id: Id
+}
+
+function logDetails (value: Users | Persons): void {
+  if (value.type === 'user') {
+    console.log(`User: ${value.username} with email address: ${value.email} is logged in.`);
+  } else if (value.type === 'person') {
+    console.log(`A man named ${value.firstname}, is ${value.age} years old.`);
+  }
+}
+
+const newUser: Users = {
+  type: 'user',
+  username: 'Sandiego17',
+  email: 'sandiego2all2014@gmail.com',
+  id: 1
+};
+
+const newPerson: Persons = {
+  type: 'person',
+  firstname: 'Henry',
+  age: 35,
+  id: 2
+};
+
+logDetails(newUser);
+logDetails(newPerson);
