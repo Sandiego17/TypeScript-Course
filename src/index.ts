@@ -110,3 +110,39 @@ let userID: [name: string, age: number];
 userID = ['Potato', 25];
 console.log(userID[0]);
 
+// interfaces
+interface Author {
+  name: string
+  avatar: string
+}
+
+interface Post {
+  title: string
+  body: string
+  tags: string[]
+  create_at: Date
+  author: Author
+}
+
+const authorOne: Author = { name: 'mario', avatar: '/img/mario.png' };
+
+const newPost: Post = {
+  title: 'my first post',
+  body: 'something interesting',
+  tags: ['gaming', 'tech'],
+  create_at: new Date(),
+  author: authorOne
+};
+
+// interfaces as function argument types
+function createPost (post: Post): void {
+  console.log(`I created post ${post.title}, by ${post.author.name}!`);
+}
+
+createPost(newPost);
+
+// interfaces with ARRAYS
+let posts: Post[] = [];
+
+posts.push(newPost);
+
