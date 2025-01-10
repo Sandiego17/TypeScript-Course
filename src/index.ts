@@ -52,3 +52,21 @@ person.score = 40;
 
 console.log(person);
 
+// TypeScript Functions
+function addTwoNumbers (a: number, b: number): number {
+  return a + b;
+}
+
+const subtractTwoNumbers = (a: number, b: number): number => {
+  return a - b;
+};
+
+const addAllNumbers = (X: number[]) => {
+  const total = X.reduce((a, b) => a + b, 0);
+  console.log('The cummulative total of the numbers in the array is: ' + total);
+};
+
+addTwoNumbers(3, 9);
+subtractTwoNumbers(10, 4);
+addAllNumbers([5, 7, 9, 11, 13, 12, 10]);
+
