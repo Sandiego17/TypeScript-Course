@@ -2,7 +2,7 @@
 
 TypeScript is a language built on JavaScript to give extra features and primarily the ability to specify the data types to variable or values.
  
-## Benefits of TypeScript
+### Benefits of TypeScript
 1.	It provides better error feedback: When data types are specified ahead of time, this will give us good error feedback as we code. If we make a mistake along the line assigning data of a type different from the specified type to a variable, an error will be flagged and this can be corrected before it leads to a bigger error.
  
 2.	We get better auto-completion and code hints: When we define the types of every bit of data we use in TypeScript, we then get better feedback when we try to use a method or property that is not available for each data.
@@ -10,11 +10,11 @@ TypeScript is a language built on JavaScript to give extra features and primaril
  
 4.	TypeScript code is essentially self-documenting: Because the data type of each data being used is explicitly defined, it is easy to look up these different types, functions and other definitions when needed.
 
-## TypeScript Installation via npm
-Run ```terminal npm install –g typescript``` inside a terminal.
+### TypeScript Installation via npm
+Run ```npm install –g typescript``` inside a terminal.
 
 To run a TS file on the computer, we first need to compile the TS file to JS and then run the following scripts:
-```terminal
+```
   tsc [filename]
   node [compiled js file]
 ```
@@ -22,13 +22,14 @@ To run a TS file on the computer, we first need to compile the TS file to JS and
 To make this process more seamless, execute the following steps:
 
 i.	Initialize TypeScript compiler and create a “tsconfig.json” file by running the script
-```terminal
+```
   tsc --init
 ```
 
-ii.	Inside the “tsconfig.json” file, uncomment both the “root” and “out” directories and assign them the following values:	```bash
-    "rootDir": "./src",
-    "outDir": "./dist",
+ii.	Inside the “tsconfig.json” file, uncomment both the “root” and “out” directories and assign them the following values:
+```
+  "rootDir": "./src",
+  "outDir": "./dist",
 ```
 
 iii.	Create an “src” folder and a “dist” folder, move the ts file into the “src” folder, and open the terminal to run: > tsc --watch.
