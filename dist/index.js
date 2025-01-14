@@ -1,14 +1,28 @@
 "use strict";
+// DataTypes in TypeScript
 var myAge = 35;
 console.log(myAge);
-var age = 35;
-var firstName = "Henry";
-var isFictional = true;
+let decimal = 35;
+let hex = 0xf00d;
+let binary = 0b1010;
+let octal = 0o744;
+// let big: bigint = 100n; BigInt literals are not available when targeting lower than ES2020.
+let firstName = "Henry";
+let fullName = "Henry Uzor";
+let sentence = `Hello, my name is ${fullName}. I'll be ${myAge + 1} years old towards the end of the year.`;
+let isFictional = true;
 let something;
 let anotherThing;
+let notSure = 4;
+notSure = "maybe a string instead";
+function error(message) {
+    throw new Error(message);
+}
 // ARRAYS
 let names = ['Henry', 'Tochukwu', 'Uzor'];
 let ages = [25, 28, 24];
+// OR
+let ageList = [25, 28, 24];
 let bools = [true, false];
 names.push('Anuoluwapo', 'Ekomobong');
 ages.push(35);
@@ -62,6 +76,9 @@ const greetingResult = formatGreeting('mario', 'hello');
 let collection = ['hello', true, 30, null, undefined];
 collection.push({ id: 123 });
 console.log(collection);
+// The following function declaration doesn't run or get compiled in JS because JS doesn't recognise the "declare" keyword, so it gets ignored and ultimately, the function is not defined in JS.
+// declare function getValue(key: string): any;
+// const str: string = getValue("myString");
 // tuple type
 var person1 = ['Henry', 30, true];
 var hsla;
@@ -91,10 +108,24 @@ const newPost = {
 function createPost(post) {
     console.log(`I created post ${post.title}, by ${post.author.name}!`);
 }
+// Note: When a function is set to return type "void", this means the function does not return a value
 createPost(newPost);
 // interfaces with ARRAYS
 let posts = [];
 posts.push(newPost);
+// enums
+var Color;
+(function (Color) {
+    Color[Color["Red"] = 0] = "Red";
+    Color[Color["Green"] = 1] = "Green";
+    Color[Color["Blue"] = 2] = "Blue";
+})(Color || (Color = {}));
+(function (Color) {
+    Color["RED"] = "#fff345";
+    Color["GREEN"] = "green";
+    Color["BLUE"] = "#353793";
+})(Color || (Color = {}));
+let c = Color.Green;
 function getRandomColor() {
     const r = Math.floor(Math.random() * 255);
     const g = Math.floor(Math.random() * 255);
