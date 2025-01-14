@@ -1,16 +1,33 @@
+// DataTypes in TypeScript
 var myAge: number = 35;
 
 console.log(myAge);
 
-var age: number = 35;
-var firstName: string = "Henry";
-var isFictional: boolean = true;
+let decimal: number = 35;
+let hex: number = 0xf00d;
+let binary: number = 0b1010;
+let octal: number = 0o744;
+// let big: bigint = 100n; BigInt literals are not available when targeting lower than ES2020.
+let firstName: string = "Henry";
+let fullName: string = "Henry Uzor"
+let sentence: string = `Hello, my name is ${fullName}. I'll be ${myAge + 1} years old towards the end of the year.`
+let isFictional: boolean = true;
 
 let something: null;
 let anotherThing: undefined;
+
+let notSure: unknown = 4;
+notSure = "maybe a string instead";
+
+function error(message: string): never {
+  throw new Error(message);
+}
+
 // ARRAYS
 let names: string[] = ['Henry', 'Tochukwu', 'Uzor'];
 let ages: number[] = [25, 28, 24];
+// OR
+let ageList: Array<number> = [25, 28, 24];
 let bools: boolean[] = [true, false];
 
 names.push('Anuoluwapo', 'Ekomobong');
@@ -84,6 +101,9 @@ collection.push({id: 123});
 
 console.log(collection);
 
+declare function getValue(key: string): any;
+const str: string = getValue("myString");
+
 // tuple type
 var person1: [string, number, boolean] = ['Henry', 30, true];
 
@@ -138,6 +158,7 @@ const newPost: Post = {
 function createPost (post: Post): void {
   console.log(`I created post ${post.title}, by ${post.author.name}!`);
 }
+// Note: When a function is set to return type "void", this means the function does not return a value
 
 createPost(newPost);
 
@@ -145,6 +166,21 @@ createPost(newPost);
 let posts: Post[] = [];
 
 posts.push(newPost);
+
+// enums
+enum Color {
+  Red,
+  Green,
+  Blue
+}
+
+enum Color {
+  RED = '#fff345',
+  GREEN = 'green',
+  BLUE = '#353793'
+}
+
+let c: Color = Color.Green;
 
 // type alias with tuple
 type Rgb = [number, number, number]
