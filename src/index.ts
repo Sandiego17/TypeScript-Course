@@ -101,8 +101,9 @@ collection.push({id: 123});
 
 console.log(collection);
 
-declare function getValue(key: string): any;
-const str: string = getValue("myString");
+// The following function declaration doesn't run or get compiled in JS because JS doesn't recognise the "declare" keyword, so it gets ignored and ultimately, the function is not defined in JS.
+// declare function getValue(key: string): any;
+// const str: string = getValue("myString");
 
 // tuple type
 var person1: [string, number, boolean] = ['Henry', 30, true];
