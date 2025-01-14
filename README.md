@@ -10,6 +10,9 @@ TypeScript is a language built on JavaScript to give extra features and primaril
  
 4.	TypeScript code is essentially self-documenting: Because the data type of each data being used is explicitly defined, it is easy to look up these different types, functions and other definitions when needed.
 
+## Type Assertions
+This is used by the programmer to take control over value type, away from the compiler. Type Assertion can come in two forms, either as the regular TypeScript syntax, or as angle-bracket syntax.
+
 ## TypeScript Installation via npm
 Run ```npm install –g typescript``` inside a terminal.
 
@@ -39,16 +42,23 @@ iv.	Open another terminal and create a similar watch command for node to watch t
 
 ## DataTypes in TypeScript
 We have ```“string”```, ```“number”```, and ```“Boolean”```. We also have ```“null”``` and ```“undefined”```, both of which represent a lack of value, but with a small distinction. When we assign the value “null” to a variable, we are intentionally providing the absence of actual value to the variable, but when the variable is “undefined” in that we did not assign a value whatsoever to the variable, that is more of an unintentional lack of value. So once a variable is explicitly “undefined” or assigned the value “null”, it cannot be changed.
+
+```"unknown"``` as the name implies, is a data type available in TypeScript, which is assigned to a variable or data with unknown or yet to be defined data type.
  
 Other data types in TypeScript are ```“arrays”``` and ```“object literals”```. In TypeScript, type inference also happens with arrays, whereby TypeScript infers the type of data if not defined.
  
 Another datatype in TypeScript is ```“any”```. Assigning the data type “any” to a variable means that the data type of the variable can be changed in the future.
  
 One other datatype in TypeScript is ```“tuple”```. This datatype is like an array, but whereas an array typically is a collection of values of a particular type in no specific order, tuple is an array of values of different data types in a very specific order.
+
+One very uncommon type in TypeScript is the ```"never"``` type. This represents type of values that can never occur. A valid point to note here is that, the "never" type is assignable to other data types, but no other data type is assignable to the "never" type e.g. of functions returning "never".
  
  
 ## Interfaces
 This is a way of defining a certain structure that other data structures can adhere to, be it classes, object literals, or even other interfaces.
+
+## Enums
+This is a way of defining or giving names to a set of numeric values. By default, enums begin items numbering at 0. However, one can manually set the values by simply adding "= n", to any item of choice, where "n" is the assigned value for the item. 
  
  
 ## Type Alias
