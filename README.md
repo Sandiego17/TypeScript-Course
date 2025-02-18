@@ -18,8 +18,8 @@ Run ```npm install –g typescript``` inside a terminal.
 
 To run a TS file on the computer, we first need to compile the TS file to JS and then run the following scripts:
 ```
-  tsc [filename]
-  node [compiled js file]
+  tsc [filepath/filename] --outDir dist
+  node [filepath/compiled js file]
 ```
 
 To make this process more seamless, execute the following steps:
